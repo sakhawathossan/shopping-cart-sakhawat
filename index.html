@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shopping cart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="shopping-cart-sakhawat">
+        <div class="container">
+       <div class="cart-item">
+            <div class="row border-bottom border-top align-items-center ">
+                <div class="col-md-7 center-item mx-auto">
+                   <div class="d-flex center-item align-items-center">
+                    <img class="img-fluid img-item" src="./iPhone-14-Pro-Deep-Purple-7300.jpg" alt="">
+                    <h5>Iphone 14 pro max Silicone Case - Black</h5>
+                   </div>
+                </div>
+                <div class="col-md-5 center-item align-items-center d-flex">
+                    <div class="input-group number-spinner">
+                        <button onclick="handleProductChange('phone', false)" class="btn btn-default border">-</button>
+                        <input type="text" name="" id="case-count" class="form-control text-center" value="1">
+                        <button onclick="handleProductChange('phone', true)" class="btn btn-default border">+</button>
+                    </div>
+                    <h5><span id="case-total">10</span>৳</h5>
+                    <img src="delete-180.png" alt="" class="remove-item img-fluid">
+                    
+                </div>
+            </div>
+        </div>
+       <div class="cart-item">
+            <div class="row border-bottom border-top align-items-center ">
+                <div class="col-md-7 center-item mx-auto">
+                   <div class="d-flex center-item align-items-center">
+                    <img class="img-fluid img-item" src="./iPhone-14-Pro-Deep-Purple-7300.jpg" alt="">
+                    <h5>Iphone 14 pro max Silicone Case - Black</h5>
+                   </div>
+                </div>
+                <div class="col-md-5 center-item align-items-center d-flex">
+                    <div class="input-group number-spinner">
+                        <button onclick="handleProductChange('case',false)" class="btn btn-default border">-</button>
+                        <input type="text" name="" id="case-count" class="form-control text-center" value="1">
+                        <button onclick="handleProductChange('case',true)" class="btn btn-default border">+</button>
+                    </div>
+                    <h5><span id="case-total">20</span>৳</h5>
+                    <img src="delete-180.png" alt="" class="remove-item img-fluid">
+                    
+                </div>
+            </div>
+        </div>
+       </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+         function handleProductChange(product, isIncrease){
+             // console.log('Cart Item decrease.')
+             const productInput = document.getElementById(product + '-count');
+            const productCount = parseInt(productInput.value);
+            // const caseNewCount = caseCount - 1;
+            if(isIncrease == true){
+                productNewCount = productCount + 1;
+
+            }
+            if(isIncrease == false && productCount >0){
+                productNewCount = productCount - 1;
+
+            }
+            productInput.value = productNewCount;
+            // const productTotal = productNewCount * 10;
+            let productTotal = 0;
+            if(product == 'phone'){
+                productTotal = productNewCount *2099;
+            }
+            if(product == 'case'){
+                productTotal = productNewCount *59;
+            }
+            document.getElementById(product + '-total').innerText = productTotal;
+        }      
+        
+      
+        // function handleProductChangeTwo(isIncrease){
+        //      // console.log('Cart Item decrease.')
+        //      const phoneInput = document.getElementById('phone-count');
+        //     const phoneCount = parseInt(phoneInput.value);
+        //     // const caseNewCount = caseCount - 1;
+        //     if(isIncrease == true){
+        //         phoneNewCount = phoneCount + 1;
+    
+        //     }
+        //     if(isIncrease == false && phoneCount >0){
+        //         phoneNewCount = phoneCount - 1;
+    
+        //     }
+        //     phoneInput.value = phoneNewCount;
+        //     const phoneTotal = phoneNewCount * 20;
+        //     document.getElementById('phone-total').innerText = phoneTotal;
+        // }      
+        
+        // function handleProductChange(isIncrease){
+        //      // console.log('Cart Item decrease.')
+        //      const caseInput = document.getElementById('case-count');
+        //     const caseCount = parseInt(caseInput.value);
+        //     // const caseNewCount = caseCount - 1;
+        //     if(isIncrease == true){
+        //         caseNewCount = caseCount + 1;
+    
+        //     }
+        //     if(isIncrease == false && caseCount >0){
+        //         caseNewCount = caseCount - 1;
+    
+        //     }
+        //     caseInput.value = caseNewCount;
+        //     const caseTotal = caseNewCount * 10;
+        //     document.getElementById('case-total').innerText = caseTotal;
+        // }      
+        
+      
+        //  document.getElementById('case-increase').addEventListener('click', function(){
+        //     handleProductChange(true);
+            
+        // });
+        // document.getElementById('case-decrease').addEventListener('click',function(){
+        //     handleProductChange(false);
+           
+        // })
+        
+        // document.getElementById('case-increase').addEventListener('click', function(){
+        //     // console.log('Add Items Quantity.');
+        //     const caseInput = document.getElementById('case-count');
+        //     // console.log(caseInput.value);
+        //     const caseCount = parseInt(caseInput.value);
+        //     // console.log(caseCount);
+        //     const caseNewCount = caseCount + 1;
+        //     caseInput.value = caseNewCount;
+        //     const caseTotal = caseNewCount * 10;
+        //     document.getElementById('case-total').innerText = caseTotal;
+        // });
+        // document.getElementById('case-decrease').addEventListener('click',function(){
+        //     // console.log('Cart Item decrease.')
+        //     const caseInput = document.getElementById('case-count');
+        //     const caseCount = parseInt(caseInput.value);
+        //     const caseNewCount = caseCount - 1;
+        //     caseInput.value = caseNewCount;
+        //     const caseTotal = caseNewCount * 10;
+        //     document.getElementById('case-total').innerText = caseTotal;
+        // })
+
+        
+    </script>
+  </body>
+</html>

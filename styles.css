@@ -1,0 +1,23 @@
+.shopping-cart-sakhawat{
+    margin-top: 100px;
+}
+.shopping-cart-sakhawat .img-item{
+    width: 150px;
+    height: auto;
+}
+.remove-item{
+    width: 20px;
+    height: auto;
+    /* cursor: pointer; */
+    /* padding: 10px 30px; */
+    margin: 10px 30px;
+}
+h5{
+    margin: 10px 30px;
+    
+}
+.number-spinner{
+    margin: 10px 30px;
+    width: auto;
+
+}
